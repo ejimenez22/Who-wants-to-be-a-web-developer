@@ -1,0 +1,51 @@
+body {
+    background-image: url(../images/wwtbam.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: sans-serif;
+    font-size: 40px;
+    color: white;
+}
+
+.title {
+    font-size: 100px;
+    color: white;  
+    text-align: center;
+}
+
+.intro {
+    font-size: 50px;
+    color: white;
+    text-align: center;
+}
+
+.play-now {
+    text-align: center;
+}
+
+.question {
+    text-align: center;
+}
+
+.question ul li {
+    background-color: aqua;
+    display: inline-flex;
+    border: 2px inset black;
+    border-radius: 5px;
+    width: max-content;
+    color: black;
+}
+
+.btn {
+    text-align: center;
+    background-color: purple;
+    color: white;
+    font-size: 20px;
+}
+
+.btn-play {
+    text-align: center;
+    background-color: purple;
+    color: white;
+    font-size: 20px;
+}
