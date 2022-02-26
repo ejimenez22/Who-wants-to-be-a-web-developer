@@ -25,6 +25,7 @@ body {
 
 .question {
     text-align: center;
+    display: none;
 }
 
 .question ul li {
@@ -49,3 +50,4 @@ body {
     color: white;
     font-size: 20px;
 }
+
