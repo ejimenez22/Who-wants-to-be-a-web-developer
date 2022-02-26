@@ -2,8 +2,11 @@ var playNow = document.getElementById("play");
 var questionList = document.getElementById("quiz-questions");
 var quizAnswers = document.getElementById("quiz-answers");
 var nextButton = document.getElementById("next");
+var questions = document.getElementById("questions");
+var answers = document.getElementById("answers");
 
 playNow.addEventListener("click", startQuiz)
+
 
 function startQuiz () {
     playNow.classList.add("hide");
@@ -16,9 +19,10 @@ function questionsList () {
 }
 
 function addQuestions () {
-    quizQuestions = document.getElementById("questionList");
+    questions.innerHTML = quizQuestions[0].question;
+    answers.innerHTML = quizQuestions[0].choices;
+    for (var i = 0; i < quizQuestions.length; i++); 
 }
-
 
 
 // Questions 
