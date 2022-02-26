@@ -1,10 +1,25 @@
-var playNow = document.querySelector("btn-play");
+var playNow = document.getElementById("play");
+var questionList = document.getElementById("quiz-questions");
+var quizAnswers = document.getElementById("quiz-answers");
+var nextButton = document.getElementById("next");
 
-var playNow = function() {
-    playNowEl.addEventListener("click", function() {
-        console.log("start");
-    }
-    )}
+playNow.addEventListener("click", startQuiz)
+
+function startQuiz () {
+    playNow.classList.add("hide");
+    questionList.classList.remove("hide");
+    questionsList();
+}
+
+function questionsList () {
+    addQuestions(quizQuestions);
+}
+
+function addQuestions () {
+    quizQuestions = document.getElementById("questionList");
+}
+
+
 
 // Questions 
 var quizQuestions = [
@@ -25,7 +40,7 @@ var quizQuestions = [
     },
     {
         question: "Please identify the proper syntax for an Array.",
-        choices: ["var car = ford, chevy, dodge;", "var car = 'ford' 'chevy' 'dodge';", "var car = ['Ford','Chevy','Dodge'];"],
+        choices: ["var car = Ford, Chevy, Dodge;", "var car = 'Ford' 'Chevy' 'Dodge';", "var car = ['Ford','Chevy','Dodge'];"],
         answer: "var car = ['Ford','Chevy','Dodge'];"
     },
     {
@@ -34,3 +49,4 @@ var quizQuestions = [
         answer: "THIS is the object from which the method was called"
     }
 ];
+

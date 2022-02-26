@@ -23,21 +23,18 @@ body {
     text-align: center;
 }
 
-#quiz-questions {
+.hide {
     display: none;
 }
 
-.btn {
+.btn-play, #next {
     text-align: center;
     background-color: purple;
     color: white;
     font-size: 20px;
 }
 
-.btn-play {
+#quiz-questions {
     text-align: center;
-    background-color: purple;
-    color: white;
-    font-size: 20px;
 }
 
