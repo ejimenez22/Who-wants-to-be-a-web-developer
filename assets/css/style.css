@@ -23,18 +23,8 @@ body {
     text-align: center;
 }
 
-.question {
-    text-align: center;
+#quiz-questions {
     display: none;
-}
-
-.question ul li {
-    background-color: aqua;
-    display: inline-flex;
-    border: 2px inset black;
-    border-radius: 5px;
-    width: max-content;
-    color: black;
 }
 
 .btn {
