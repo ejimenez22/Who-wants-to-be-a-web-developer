@@ -2,7 +2,7 @@ var playNow = document.getElementById("play");
 var questionList = document.getElementById("quiz-questions");
 var nextButton = document.getElementById("next");
 var questionEl = document.getElementById("questions");
-var choicesEl = document.getElementById("answers");
+var choicesEl = document.getElementById("buttonContainer");
 //var choice1 = document.getElementById("choice1");
 //var choice2 = document.getElementById("choice2");
 //var choice3 = document.getElementById("choice3");
@@ -21,12 +21,16 @@ function startQuiz () {
 
 function questionsList () {
     questionEl.innerText = quizQuestions[0].question;
-    quizQuestions.choices.forEach(choices => {
-        var button = document.createElement("button")
-        button.innerHTML = choices.text
-    })
-
-}
+    var choicesArray = quizQuestions[0].choices;
+    for (var i = 0; i < choicesArray.length; i++) {
+        var newButton = document.createElement("button");
+        newButton.innerText = choicesArray[0].text;
+        newButton.innerText = choicesArray[1].text;
+        newButton.innerText = choicesArray[2].text;
+        }
+        document.getElementById("buttonContainer").appendChild(newButton)
+        console.log(choicesArray, newButton)
+    }
 
 
 // Questions 
@@ -34,7 +38,7 @@ var quizQuestions = [
     {
       question: "What is an HTML Iframe used for?",
       choices: [
-          {text: "Frame Photos in your document", correct: false},
+          {text:"Frame Photos in your document", correct: false},
           {text: "Embed a document within your HTML", correct: true},
           {text: "Index your HTML 'p' tag for proper indentation", correct: false}
       ]

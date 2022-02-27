@@ -38,20 +38,8 @@ body {
     text-align: center;
 }
 
-.answer-list {
+.choice-btn {
     background-color: aqua;
-    display: block;
-    align-items: flex-start;
-    border: 2px inset black;
-    border-radius: 5px;
-    width: max-content;
     color: black;
-}
-
-.answer-list:hover {
-    background-color: yellow;
-}
-
-.answer-list:active {
-    background-color: yellow;
+    font-size: 40px;
 }
