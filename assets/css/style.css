@@ -38,8 +38,7 @@ body {
     text-align: center;
 }
 
-.choice-btn {
-    background-color: aqua;
+#buttonContainer {
     color: black;
     font-size: 40px;
 }

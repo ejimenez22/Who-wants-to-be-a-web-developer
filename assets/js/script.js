@@ -3,34 +3,42 @@ var questionList = document.getElementById("quiz-questions");
 var nextButton = document.getElementById("next");
 var questionEl = document.getElementById("questions");
 var choicesEl = document.getElementById("buttonContainer");
-//var choice1 = document.getElementById("choice1");
-//var choice2 = document.getElementById("choice2");
-//var choice3 = document.getElementById("choice3");
 
 var currentQuestionIndex = 0;
 
 
 playNow.addEventListener("click", startQuiz)
+nextButton.addEventListener("click", () => {
+    currentQuestionIndex++
+    questionsList()
+})
 
 
 function startQuiz () {
     playNow.classList.add("hide");
     questionList.classList.remove("hide");
     questionsList(currentQuestionIndex);
+    //reset ()
 }
 
 function questionsList () {
-    questionEl.innerText = quizQuestions[0].question;
-    var choicesArray = quizQuestions[0].choices;
-    for (var i = 0; i < choicesArray.length; i++) {
+    questionEl.innerText = quizQuestions[currentQuestionIndex].question;
+    for (var i = 0; i < 3; i++) {
         var newButton = document.createElement("button");
-        newButton.innerText = choicesArray[0].text;
-        newButton.innerText = choicesArray[1].text;
-        newButton.innerText = choicesArray[2].text;
-        }
+        newButton.style.backgroundColor = "#8F00FF"
+        newButton.style.fontSize = "40px"
+        newButton.style.color = "white"
+        newButton.innerText = quizQuestions[currentQuestionIndex].choices[i].text;
         document.getElementById("buttonContainer").appendChild(newButton)
-        console.log(choicesArray, newButton)
+        }
+        if () {
+            newButton.style.backgroundColor = "#228B22"
+        } else {
+            newButton.style.backgroundColor = "#8b0000"
+        }
     }
+
+    
 
 
 // Questions 
@@ -42,25 +50,37 @@ var quizQuestions = [
           {text: "Embed a document within your HTML", correct: true},
           {text: "Index your HTML 'p' tag for proper indentation", correct: false}
       ]
+    },
+   {
+      question: "Flexbox is used for which of the following purposes?",
+      choices: [
+          {text: "Designing flexible responsive layouts without using float or positioning", correct: true},
+          {text: "Automatically setting the height and width of a property", correct: false},
+          {text: "Adds a line-break after each element, so they can sit next to other elements", correct: false}
+      ]
+    },
+    {
+      question: "True or False: Media Queries allow a deployed website to adapt to multiple viewports?",
+      choices: [
+          {text: "True", correct: true},
+          {text:"False", correct: false},
+          {text: "Bro...what are you talking about?", correct: false}
+      ]
+    },
+    {
+      question: "Please identify the proper syntax for an Array.",
+      choices: [
+          {text: "var car = Ford, Chevy, Dodge;", correct: false},
+          {text: "var car = 'Ford' 'Chevy' 'Dodge';", correct: false},
+          {text: "var car = ['Ford','Chevy','Dodge'];", correct: true}
+      ]
+    },
+    {
+      question: "What is the definition of 'THIS'",
+      choices: [
+          {text: "THIS is a quiz", correct: false},
+          {text: "THIS is a programming language", correct: false},
+          {text: "THIS is the object from which the method was called", correct: true}
+      ]
     }
-   // {
-     // question: "Flexbox is used for which of the following purposes?",
-      //choices: ["Designing flexible responsive layouts without using float or positioning", "Automatically setting the height and width of a property", "Adds a line-break after each element, so they can sit next to other elements"], 
-      //answer: "Designing flexible responsive layouts without using float or positioning",
-    //},
-    //{
-      //  question: "True or False: Media Queries allow a deployed website to adapt to multiple viewports?",
-        //choices: ["True", "False", "Bro...what are you talking about?"],
-        //answer: "True"
-    //},
-    //{
-      //  question: "Please identify the proper syntax for an Array.",
-        //choices: ["var car = Ford, Chevy, Dodge;", "var car = 'Ford' 'Chevy' 'Dodge';", "var car = ['Ford','Chevy','Dodge'];"],
-        //answer: "var car = ['Ford','Chevy','Dodge'];"
-    //},
-    //{
-      //  question: "What is the definition of 'THIS'",
-        //choices: ["THIS is a quiz", "THIS is a programming language", "THIS is the object from which the method was called"],
-        //answer: "THIS is the object from which the method was called"
-    //}
 ]
