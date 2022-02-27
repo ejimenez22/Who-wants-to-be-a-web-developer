@@ -11,6 +11,7 @@ var currentQuestionIndex = 0;
 playNow.addEventListener("click", startQuiz)
 nextButton.addEventListener("click", () => {
     currentQuestionIndex++
+    choicesEl.document.getElementById("buttonContainer").reset();
     questionsList()
 })
 
@@ -18,7 +19,6 @@ function startQuiz() {
     playNow.classList.add("hide");
     questionList.classList.remove("hide");
     questionsList(currentQuestionIndex);
-    choicesBtns.forEach(element => element.classList.add("hide"));
 }
 
 function choiceClick() {
@@ -38,13 +38,10 @@ function questionsList() {
         newButton.setAttribute("value", quizQuestions[currentQuestionIndex].choices[i].correct);
         newButton.setAttribute("class", "choice-btn");
         newButton.textContent = quizQuestions[currentQuestionIndex].choices[i].text;
-
-
         newButton.onclick = choiceClick
         document.getElementById("buttonContainer").appendChild(newButton)
     }
 }
-
 
 
 
