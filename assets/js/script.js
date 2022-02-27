@@ -11,7 +11,6 @@ var currentQuestionIndex = 0;
 playNow.addEventListener("click", startQuiz)
 nextButton.addEventListener("click", () => {
     currentQuestionIndex++
-    choicesEl.document.getElementById("buttonContainer").reset();
     questionsList()
 })
 
@@ -33,6 +32,7 @@ function choiceClick() {
 
 function questionsList() {
     questionEl.innerText = quizQuestions[currentQuestionIndex].question;
+    choicesEl.innertext = ""
     for (var i = 0; i < 3; i++) {
         var newButton = document.createElement("button");
         newButton.setAttribute("value", quizQuestions[currentQuestionIndex].choices[i].correct);
