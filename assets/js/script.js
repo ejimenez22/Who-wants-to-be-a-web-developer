@@ -30,13 +30,17 @@ function questionsList () {
         newButton.style.color = "white"
         newButton.innerText = quizQuestions[currentQuestionIndex].choices[i].text;
         document.getElementById("buttonContainer").appendChild(newButton)
-        }
-        if () {
-            newButton.style.backgroundColor = "#228B22"
-        } else {
-            newButton.style.backgroundColor = "#8b0000"
+        if (quizQuestions[currentQuestionIndex].choices[i].correct)
+        {
+            newButton.addEventListener ("click", (e) => {
+            newButton.style.backgroundColor = "#228B22" })}
+            else {
+            newButton.addEventListener ("click", (e) => {
+                newButton.style.backgroundColor = "#8b0000" 
+            })
         }
     }
+}
 
     
 
