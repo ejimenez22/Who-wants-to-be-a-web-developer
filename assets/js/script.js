@@ -5,6 +5,10 @@ var questions = document.getElementById("questions");
 var answers = document.getElementById("answers");
 
 playNow.addEventListener("click", startQuiz)
+nextButton.addEventListener("click", () => {
+    quizQuestions++
+    questionList
+}) 
 
 
 function startQuiz () {
@@ -19,7 +23,9 @@ function questionsList () {
 
 function addQuestions () {
     questions.innerHTML = quizQuestions[0].question;
-    answers.innerHTML = quizQuestions[0].choices;
+    document.getElementById("answers").innerText = {
+        choices
+    }
 }
 
 
