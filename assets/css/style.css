@@ -42,3 +42,16 @@ body {
     color: black;
     font-size: 40px;
 }
+
+.choice-btn {
+    background-color: #8F00FF;
+    font-size: 40px;
+    color: white;
+   }
+   
+   .wrong {
+    background-color: #8b0000;
+   }
+   .correct {
+    background-color: #228B22;
+   }
