@@ -6,7 +6,13 @@ var choicesEl = document.getElementById("buttonContainer");
 var choicesBtns = document.querySelector("choice-btn")
 
 var currentQuestionIndex = 0;
-
+var timeLeft = 10;
+var countdownTimer = setInterval(function(){
+    if(timeLeft<=0){
+        clearInterval(countdownTimer);
+    } document.createElement("progressBar").value = 10-timeLeft;
+    timeLeft-=1;
+},1000)
 
 playNow.addEventListener("click", startQuiz)
 nextButton.addEventListener("click", () => {
@@ -28,11 +34,12 @@ function choiceClick() {
     } else {
         this.classList.add("wrong")
     }
+    savedGame();
 }
 
 function questionsList() {
     questionEl.innerText = quizQuestions[currentQuestionIndex].question;
-    choicesEl.innertext = ""
+    choicesEl.innerText = ""
     for (var i = 0; i < 3; i++) {
         var newButton = document.createElement("button");
         newButton.setAttribute("value", quizQuestions[currentQuestionIndex].choices[i].correct);
@@ -42,7 +49,9 @@ function questionsList() {
         document.getElementById("buttonContainer").appendChild(newButton)
     }
 }
-
+function savedGame () {
+localStorage.setItem(choiceClick, JSON.stringify(choiceClick));
+}
 
 
 // Questions 
